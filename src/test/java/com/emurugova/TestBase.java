@@ -4,7 +4,6 @@ import com.emurugova.config.MainConfig;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
 
@@ -16,5 +15,4 @@ public class TestBase {
     static void setUp() {
         RestAssured.baseURI = config.baseUrl();
     }
-
 }

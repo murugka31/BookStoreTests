@@ -40,5 +40,4 @@ public class BookStoreApiTests extends TestBase {
                 .log().body()
                 .body("books", hasSize(greaterThan(0)));
     }
-
 }
