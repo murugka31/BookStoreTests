@@ -1,0 +1,1 @@
+Автотесты на проверку API используя Swagger "Book Store API"
