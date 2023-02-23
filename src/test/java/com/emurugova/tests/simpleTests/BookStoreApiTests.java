@@ -1,4 +1,4 @@
-package com.emurugova.tests;
+package com.emurugova.tests.simpleTests;
 
 import com.emurugova.TestBase;
 import org.junit.jupiter.api.Test;
