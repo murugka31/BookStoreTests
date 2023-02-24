@@ -1,4 +1,4 @@
-package com.emurugova;
+package com.emurugova.tests;
 
 import com.emurugova.config.MainConfig;
 import io.restassured.RestAssured;

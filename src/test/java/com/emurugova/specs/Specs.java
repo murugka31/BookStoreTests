@@ -11,17 +11,28 @@ import static org.hamcrest.Matchers.containsString;
 
 public class Specs {
 
-    public static RequestSpecification requestSpecification = with ()
+    public static RequestSpecification accountRequest = with ()
             .filter(customLogFilter().withCustomTemplates())
             .contentType("application/json")
             .accept("application/json")
             .log().uri()
             .log().body();
 
-    public static ResponseSpecification responseSpecification  = new ResponseSpecBuilder()
+    public static RequestSpecification booksRequest = with ()
+            .filter(customLogFilter().withCustomTemplates())
+            .contentType("application/json")
+            .log().uri()
+            .log().body();
+
+    public static ResponseSpecification accountResponse  = new ResponseSpecBuilder()
             .log(LogDetail.BODY)
             .expectStatusCode(200)
             .expectBody(containsString("success"))
             .expectBody(containsString("User authorized successfully."))
+            .build();
+
+    public static ResponseSpecification booksResponse  = new ResponseSpecBuilder()
+            .log(LogDetail.BODY)
+            .expectStatusCode(200)
             .build();
 }

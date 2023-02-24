@@ -1,12 +1,10 @@
 package com.emurugova.tests.specsTests;
 
-import com.emurugova.TestBase;
+import com.emurugova.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
-import static com.emurugova.specs.Specs.requestSpecification;
-import static com.emurugova.specs.Specs.responseSpecification;
+import static com.emurugova.specs.Specs.*;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
 
 public class AccountApiSpecsTests extends TestBase {
 
@@ -15,12 +13,12 @@ public class AccountApiSpecsTests extends TestBase {
         String data = "{\"userName\": \""+userName+"\", \"password\": \""+password+"\"}";
 
         given()
-                .spec(requestSpecification)
+                .spec(accountRequest)
                 .body(data)
                 .when()
                 .post("/Account/v1/GenerateToken")
                 .then()
-                .spec(responseSpecification);
+                .spec(accountResponse);
     }
 
     @Test
@@ -28,12 +26,12 @@ public class AccountApiSpecsTests extends TestBase {
         String data = "{\"userName\": \""+userName+"\", \"password\": \""+password+"\"}";
 
         given()
-                .spec(requestSpecification)
+                .spec(accountRequest)
                 .body(data)
                 .when()
                 .post("/Account/v1/GenerateToken")
                 .then()
                 .log().body()
-                .spec(responseSpecification);
+                .spec(accountResponse);
     }
 }

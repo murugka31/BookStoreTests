@@ -1,6 +1,6 @@
 package com.emurugova.tests.simpleTests;
 
-import com.emurugova.TestBase;
+import com.emurugova.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.emurugova.filters.CustomLogFilter.customLogFilter;
