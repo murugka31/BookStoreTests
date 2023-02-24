@@ -19,6 +19,8 @@ public class BookStoreApiGroovyTests extends TestBase {
                     .then()
                     .spec(booksResponse)
                     .body("books.findAll{it.isbn =~/97814.*?/}.isbn.flatten()",
+                            hasItem("9781449325862"))
+                    .body("books.findAll{it.isbn}.isbn.flatten()",
                             hasItem("9781449325862"));
         }
 }
